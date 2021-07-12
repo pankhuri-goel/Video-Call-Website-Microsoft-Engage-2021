@@ -7,6 +7,8 @@ myVideo.muted = true ;
 const peer = new Peer() ; 
 const myPeer = {}
 
+const user = prompt("Enter your name") ;
+
 navigator.mediaDevices.getUserMedia({
     video: true,
     audio: true
@@ -14,14 +16,14 @@ navigator.mediaDevices.getUserMedia({
     myVideoStream = stream ;
     addVideoStream(myVideo, stream) ;
 
-    peer.on('call', call => {
-        console.log('bleh')
+    peer.on('call', (call) => {
         call.answer(stream)
         const video = document.createElement('video')
         call.on('stream', userVideoStream => {
-            console.log('nah')
             addVideoStream(video, userVideoStream)
-        })
+        }), function(err) {
+            console.log('Failed to get local stream', err) ;
+        }
     })
     
     socket.on('user-connected', (userId) => {
@@ -38,7 +40,7 @@ navigator.mediaDevices.getUserMedia({
     });
 
     socket.on('createMessage', message => {
-        $('.messages').append(`<li class = "message"><b>user</b><br/>${message}</li>`)
+        $('.messages').append(`<li class = "message"><b>${user}</b><br/>${message}</li>`)
         scrollToBottom()
     })
 
@@ -90,7 +92,6 @@ const muteUnmute = () => {
 }
   
 const playStop = () => {
-    console.log('object')
     let enabled = myVideoStream.getVideoTracks()[0].enabled;
     if (enabled) {
         myVideoStream.getVideoTracks()[0].enabled = false;
@@ -100,7 +101,14 @@ const playStop = () => {
         myVideoStream.getVideoTracks()[0].enabled = true;
     }
 }
-  
+
+const roomLink = () => {
+    prompt(
+        "Copy this link and share it with people you want to call with -->",
+        window.location.href 
+    )
+}
+
 const setMuteButton = () => {
     const html = `
         <i class="fas fa-microphone"></i>
@@ -132,4 +140,3 @@ const setPlayVideo = () => {
     `
     document.querySelector('.main__video_button').innerHTML = html;
 }
-

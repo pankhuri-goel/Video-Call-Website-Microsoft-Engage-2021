@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "design.css">
+    <title>WELCOME</title>
+</head>
+<body>
+    <div class = "main">
+        <a class = "main__controls__button" href = "room.ejs" target = "_blank" style = "font-size: 20px;">Create New Meeting ID</a>
+        <div class = "main__link__container">
+            <input id = "meeting-code" type = "text" placeholder = "Type meeting link here..." 
+            style="size: 20px;
+            font-family: cursive;
+            font-size: 15px;
+            text-align: center;">
+        </div>
+        <div onclick = "joinMeeting()" class = "main__controls__button">
+            <span style = "font-size: 20px ;">Join Meeting ID</span>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    function joinMeeting(){
+        let input = document.getElementById('meeting-code').value ;
+        if ( input !== '' ){
+            const win = window.open(`/${input}`, "_blank") ;
+            win.focus();
+        }
+    }
+</script>

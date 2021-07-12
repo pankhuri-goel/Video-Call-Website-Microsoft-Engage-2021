@@ -11,7 +11,7 @@ body {
 
 video {
     height: 300px;
-    width: 400px;
+    width: 300px;
     object-fit: cover;
     padding: 8px;
 }
@@ -32,7 +32,7 @@ video {
 }
 
 .main__videos {
-    background-color: black ;
+    background-color: #fffcff ;
     flex-grow: 1 ;
     display: flex ;
     justify-content: center ;
@@ -42,8 +42,8 @@ video {
 
 .main__controls {
     display: flex ;
-    background-color: #1C1E20 ;
-    color: #D2D2D2 ;
+    background-color: #e7f3ff ;
+    color: black ;
     padding: 5px ;
     justify-content: center ;
 }
@@ -63,7 +63,7 @@ video {
 }
 
 .main__controls__button:hover {
-    background-color: #343434;
+    background-color: #ffffff;
     border-radius: 5px;
 }
 
@@ -78,13 +78,12 @@ video {
 .main__right {
     display: flex ;
     flex-direction: column ;
-    background-color: #242324 ;
+    background-color: mintcream ;
     border-left: 1px solid #3D3D42 ;
 }
 
 .main__header {
     padding-top: 5px ;
-    color: #F5F5F5 ;
     text-align: center ;
 }
 
@@ -102,11 +101,11 @@ video {
     flex-grow: 1;
     background-color: transparent;
     border: none;
-    color: #F5F5F5;
+    color: black;
 }
 
 .messages {
-    color: white ;
+    color: black ;
     list-style: none ;
 }
 

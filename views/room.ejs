@@ -35,9 +35,13 @@
                         <i class="fas fa-video"></i>
                         <span>Stop Video</span>
                     </div>
-                    <div class="main__controls__button">
-                        <i class="fas fa-phone"></i>
-                        <span>Leave Meeting</span>
+                    <div onclick = "roomLink()" class = "main__controls__button" >
+                        <i class="fas fa-user-plus"></i>
+                        <span>Room Link</span>
+                    </div>
+                    <div onclick = "leaveMeeting()" class="main__controls__button">
+                        <i class="fas fa-phone-alt" style="color: #EB534B"></i>
+                        <span class = "leave_meeting">Leave Meeting</span>
                     </div>
                 </div>
 
@@ -46,7 +50,7 @@
 
         <div class = "main__right">
             <div class = "main__header">
-                <h5>CHAT</h5>
+                <h5 style = "color: black; text-decoration: underline ;">CHAT</h5>
             </div>
             <div class="main__chat_window">
                 <ul class="messages">
@@ -61,3 +65,10 @@
 
 </body>
 </html>
+
+<script>
+    function leaveMeeting() {
+        console.log('leave')
+        close()
+    }
+</script>

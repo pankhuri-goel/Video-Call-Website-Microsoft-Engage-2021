@@ -12,6 +12,10 @@ app.use(express.static('public')) ;
 
 app.use('/peerjs', peerServer) ;
 app.get('/', (req, res) => {
+    res.render(`welcomepage`) ;
+})
+
+app.get('/room.ejs', (req, res) => {
     res.redirect(`/${uuidV4()}`) ;
 })
 
