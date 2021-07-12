@@ -1,4 +1,4 @@
-const socket = io('/') ; 
+const socket = io('https://thawing-castle-33909.herokuapp.com/') ; 
 const videoGrid = document.getElementById('video-grid') ;
 let myVideoStream ;
 const myVideo = document.createElement('video') ;
